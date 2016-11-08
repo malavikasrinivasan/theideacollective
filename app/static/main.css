@@ -1,0 +1,33 @@
+body {
+	/*background-color: #BAACBD;*/
+	/*text-align: center;*/
+}
+
+.navbar-default {
+	background: #B91372;
+	color: black;
+}
+
+#site-title {
+	text-align: center;
+	vertical-align: center;
+}
+
+#site-nav {
+	text-align: center;
+	vertical-align: center;	
+}
+
+#site-logo {
+	height: 100px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: #B91372;
+  text-align: center;
+  vertical-align: center;
+}

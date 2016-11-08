@@ -1,0 +1,48 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - Idea(Idea)</title>
+    {% else %}
+    <title>Welcome to Idea(Idea)</title>
+    {% endif %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css')  }}">
+  </head>
+
+  <body class="text-center">
+    <header>
+      {% block header %}
+        <div id="site-title-wrapper" class="navbar navbar-default">
+          <div id="site-icon-wrapper" class="navbar-left">
+            <img id= "site-logo" src = "https://s-media-cache-ak0.pinimg.com/564x/bf/80/88/bf808800e8e1c409eab2fba053bfe7ca.jpg">
+          </div>
+          <h3 id="site-title">The Idea Collective</h3>
+          <div id="site-nav" class="pull-right">
+          {% block login_out %} {% endblock %}
+          </div>
+        </div>
+      {% endblock %}
+    </header>
+
+    <div id="content">{% block content %}
+    {% endblock %}
+    </div>
+
+
+
+    <script type="text/javascript" src="{{ url_for('static', filename='interactions.js') }}"></script>
+  </body>
+  <footer class="footer">
+      <p>&copy; Copyright 2016 $$Bills, all rights reserved</p>
+  </footer>
+
+</html>
