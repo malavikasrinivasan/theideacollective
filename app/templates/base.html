@@ -21,15 +21,18 @@
   <body class="text-center">
     <header>
       {% block header %}
-        <div id="site-title-wrapper" class="navbar navbar-default">
-          <div id="site-icon-wrapper" class="navbar-left">
-            <img id= "site-logo" src = "https://s-media-cache-ak0.pinimg.com/564x/bf/80/88/bf808800e8e1c409eab2fba053bfe7ca.jpg">
+        <nav id="site-title-wrapper" class="navbar navbar-default">
+          <div class="container-fluid">
+            <div id="site-icon-wrapper" class="navbar-left">
+              <a href="#"><img id= "site-logo" class="navbar-brand" src = "https://s-media-cache-ak0.pinimg.com/564x/bf/80/88/bf808800e8e1c409eab2fba053bfe7ca.jpg"></a>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right" id="site-nav">
+              {% block navblock %} {% endblock %}
+              </ul>
+            </div>
           </div>
-          <h3 id="site-title">The Idea Collective</h3>
-          <div id="site-nav" class="pull-right">
-          {% block login_out %} {% endblock %}
-          </div>
-        </div>
+        </nav>
       {% endblock %}
     </header>
 
@@ -42,7 +45,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='interactions.js') }}"></script>
   </body>
   <footer class="footer">
-      <p>&copy; Copyright 2016 $$Bills, all rights reserved</p>
+      <p>&copy; Copyright 2016 Idea(Idea), all rights reserved</p>
   </footer>
 
 </html>

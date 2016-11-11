@@ -3,9 +3,14 @@
 	Login
 {% endblock %}
 
+{% block navblock %}
+<li><a href="#">About</a></li>
+<li><a href="#">Profile</a></li>
+{% endblock %}
+
 {% block content %}
-<h1>Idea(Idea)</h1>
-<div class="main-container">
+<div  class="container-fluid full" id="background">
+	<h1 class="col-md-12 text-center" id="welcome"> Idea(Idea) </h1>
 	
 	<p>We can make <b>ideas</b> real, together</p>
 	<h4> {{ msg }} </h4>

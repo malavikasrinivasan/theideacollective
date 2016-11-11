@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+<h1>Idea(Idea)</h1>
+<div class="main-container">
+    
+    <p>We can make <b>ideas</b> real, together</p>
+    <h4> {{ msg }} </h4>
+    <form action="login" method="post" name="login">
+        {{ form.hidden_tag() }}
+        <p>
+            username 
+            {{ form.username(size=120) }}
+        </p>
+        <p>
+            password
+            {{ form.password(size=120) }}
+        </p>
+        <p>
+            <input type="submit" value="Login">
+        </p>
+    </form>
+</div>
+{% endblock %}

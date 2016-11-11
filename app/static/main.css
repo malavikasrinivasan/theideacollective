@@ -1,11 +1,56 @@
+/*----------------- CSS RESET ------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*----loging page ---*/
+#background {
+    background: url(idea_login.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height:100%;
+
+}
+
+#welcome {
+    font-family: 'Roboto', sans-serif;
+    font-size: 4em;
+    font-weight: light;
+    
+}
+
 body {
 	/*background-color: #BAACBD;*/
 	/*text-align: center;*/
 }
 
 .navbar-default {
-	background: #B91372;
-	color: black;
+	background: #36374F;
+	color: #ffffff;
 }
 
 #site-title {
@@ -27,7 +72,8 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 50px;
-  background-color: #B91372;
+  background-color: #36374F;
+  color: #ffffff;
   text-align: center;
   vertical-align: center;
 }
