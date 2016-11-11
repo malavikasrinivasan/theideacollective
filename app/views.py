@@ -25,7 +25,7 @@ def editprofile():
 
 @app.route('/ideafeed', methods=['GET', 'POST'])
 def ideafeed():
-    pass
+    return render_template('ideafeed.html')
 
 @app.route('/ideapage', methods=['GET', 'POST'])
 def ideapage():
@@ -33,7 +33,7 @@ def ideapage():
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
-    pass
+    return render_template('dashboard.html')
 
 @app.route('/messages', methods=['GET', 'POST'])
 def messages():
