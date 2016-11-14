@@ -9,6 +9,16 @@ class LoginForm(Form):
     password = PasswordField('password', validators=[DataRequired()])
 
 class IdeaForm(Form):
-    pass
-    
+    idea_name = StringField('idea_name', validators=[DataRequired()])
+    description = StringField('description', validators=[DataRequired()])
 
+class ProfileForm(Form):
+   name = StringField('name', validators=[DataRequired()])
+   bio = StringField('bio', validators=[DataRequired()])
+
+
+class LoginForm(Form):
+#SEL
+    email = EmailField('email', validators=[DataRequired()])
+    password = PasswordField('password', validators=[DataRequired()])
+#SEL

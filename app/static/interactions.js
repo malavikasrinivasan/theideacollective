@@ -1,4 +1,17 @@
-function deleteRow(r) { // When user clicks "Remove" button, removes the row in the table.
-	var i = r.parentNode.parentNode.rowIndex;
-	document.getElementById("trips").deleteRow(i);
+function showPassword() {
+    
+    var key_attr = $('#key').attr('type');
+    
+    if(key_attr != 'text') {
+        
+        $('.checkbox').addClass('show');
+        $('#key').attr('type', 'text');
+        
+    } else {
+        
+        $('.checkbox').removeClass('show');
+        $('#key').attr('type', 'password');
+        
+    }
+    
 }

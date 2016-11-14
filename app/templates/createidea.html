@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+	createidea
+{% endblock %}
+
+{% block navblock %}
+<li><button type="submit" class="btn btn-default" id="create-idea-btn">Have an idea?</button>
+<li><a href="#">Explore</a></li>
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+      <span class="glyphicon glyphicon-user"></span> 
+      <strong>Username</strong>
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="#">Profile</a></li>
+    <li><a href="#">Settings</a></li>
+    <li><a href="#">Logout</a></li>
+  </ul>
+</li>
+{% endblock %}
+
+{% block content %}
+<div  class="container-fluid full">
+	<h1 class="col-md-12 text-center card-title"> Share an Idea </h1>
+	<p>An idea that is developed and put into action is more important than an idea that exists only as an idea.</p>
+	<form action="createtrip" method="post" name="createtrip">
+		{{ form.hidden_tag() }}
+		<div class="row top-buffer">
+			<label id="inputIdeaName" class="col-sm-2 col-form-label text-right">Idea Name</label>
+			<div class="col-sm-8">
+				<p id="inputIdeaName">
+					{{ form.idea_name(size=120, class_="form-control") }} 
+				</p>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<label id="inputDescription" class="col-sm-2 col-form-label text-right">Description</label>
+			<div class="col-sm-8">
+				<p id="inputDescription">
+					{{ form.description(size=120, class_="form-control") }} 
+				</p>
+			</div>
+		</div>		
+		<div class="row top-buffer">
+			<label id="tagButtons" class="col-sm-2 col-form-label text-right">Tagetories</label>
+			<div class="col-sm-8 text-left">
+				<button class="btn btn-default" type="submit">Technology</button>
+				<button class="btn btn-default" type="submit">Education</button>
+				<button class="btn btn-default" type="submit">Music</button>
+				<button class="btn btn-default" type="submit">Data</button>
+				<button class="btn btn-default" type="submit">Health Care</button>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<label id="skillsButtons" class="col-sm-2 col-form-label text-right">Required Skills</label>
+			<div class="col-sm-8 text-left">
+				<button class="btn btn-default" type="submit">UX</button>
+				<button class="btn btn-default" type="submit">Front-End</button>
+				<button class="btn btn-default" type="submit">Data Science</button>
+				<button class="btn btn-default" type="submit">Security</button>
+			</div>
+		</div>
+		<div class="row top-buffer">
+			<label id="browseFiles" class="col-sm-2 col-form-label text-right">Supporting Material</label>
+			<div class="col-sm-8 text-left">
+		    	<div class="input-group">
+            		<label id="browsebutton" class="btn btn-default input-group-addon" for="my-file-selector">
+                	Browse...
+           			</label>
+            		<input type="text" class="form-control" readonly>
+        		</div>		
+			</div>
+		</div>
+	    <div class="form-group row col-sm-12 top-buffer">
+	    	<legend class="col-form-legend col-sm-2 text-right">Ownership</legend>
+	    	<div class="col-sm-8 text-left">
+	      		<div class="form-check">
+	          		<label class="form-check-label">
+	            		<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+	            		I am the owner
+	          		</label>
+	        	</div>
+	       		<div class="form-check">
+		        	<label class="form-check-label">
+		            	<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+		            	Idea up for adoption
+	         		</label>
+	        	</div>
+	      	</div>
+	    </div>
+		<p>
+			<input type="submit" value="Share!">
+		</p>
+	</form>
+{% endblock %}
