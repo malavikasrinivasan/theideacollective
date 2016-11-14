@@ -59,15 +59,23 @@ body {
 }
 
 #site-nav {
-	text-align: center;
-	vertical-align: center;	
+  margin-top: 20px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #site-logo {
 	height: 100px;
 }
+
+#create-idea-btn {
+  background: #00C1AB;
+  color: black;
+}
+
 .footer {
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -76,4 +84,45 @@ body {
   color: #ffffff;
   text-align: center;
   vertical-align: center;
+}
+
+#banner-container {
+  background: url(idea_login.jpg) no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 60%;
+  padding: 0;
+  padding-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: -20px;
+}
+
+#search-container {
+  /*padding-top: 10%;*/
+  margin-top: 15%;
+  display: flex;
+  align-items: center;
+}
+
+#search-bar {
+  width: 100%;
+  border-radius: 5px;
+}
+
+#top-ideas-container {
+  padding: 50px;
+  background: 
+}
+
+
+.thumbnail {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.tagetory-display {
+  padding-right: 10px;
+  padding-left: 10px;
 }

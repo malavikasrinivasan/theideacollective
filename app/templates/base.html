@@ -19,12 +19,11 @@
   </head>
 
   <body class="text-center">
-    <header>
-      {% block header %}
+    {% block header %}
         <nav id="site-title-wrapper" class="navbar navbar-default">
           <div class="container-fluid">
             <div id="site-icon-wrapper" class="navbar-left">
-              <a href="#"><img id= "site-logo" class="navbar-brand" src = "https://s-media-cache-ak0.pinimg.com/564x/bf/80/88/bf808800e8e1c409eab2fba053bfe7ca.jpg"></a>
+              <a href="#"><img id= "site-logo" class="navbar-brand" src = "https://www.oohology.com/res/uploads/media//ideation_1.jpg"></a>
             </div>
             <div class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right" id="site-nav">
@@ -33,8 +32,8 @@
             </div>
           </div>
         </nav>
-      {% endblock %}
-    </header>
+    {% endblock %}
+    
 
     <div id="content">{% block content %}
     {% endblock %}
@@ -43,6 +42,9 @@
 
 
     <script type="text/javascript" src="{{ url_for('static', filename='interactions.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
   <footer class="footer">
       <p>&copy; Copyright 2016 Idea(Idea), all rights reserved</p>
