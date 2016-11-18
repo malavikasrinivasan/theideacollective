@@ -27,80 +27,83 @@
                 <h3>  <span class="glyphicon glyphicon-pencil"></span>Edit Profile</h3>
                 <hr class="mt-2 mb-2">
             </div>
-            <div class="md-form">
-                <i class="fa fa-user prefix"></i>
-                <input value="Nancy Yang" type="text" id="form3" class="form-control">
-                <label for="form3">Name</label>
-            </div>
-
-            <div class="md-form">
-                <i class="fa fa-envelope prefix"></i>
-                <input value="nancy@berkeley.edu" type="text" id="form2" class="form-control">
-                <label for="form2">Email</label>
-            </div>
-
-            <div class="md-form">
-                <i class="fa fa-pencil prefix"></i>
-                <textarea type="text" id="form8" class="md-textarea">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi perferendis fuga adipisci, eum consequuntur nobis. Quis fugiat placeat laboriosam possimus beatae officia quasi. Provident, autem, qui! Enim illum officia quod.</textarea>
-                <label for="form8">Bio</label>
-            </div>
-
-            <div class="md-form">
-                <i class="fa fa-envelope prefix"></i>
-                <input type="text" id="form2" class="form-control">
-                <label for="form2">My Skills</label>
-            </div>
-
-            <form class="form-inline text-left col-md-offset-1">
-
-                <fieldset class="form-group">
-                    <input type="checkbox" class="filled-in" id="checkbox1">
-                    <label class="" for="checkbox1">UX</label>
-                </fieldset>
-
-                <fieldset class="form-group">
-                    <input type="checkbox" id="checkbox2">
-                    <label for="checkbox2">Data Science</label>
-                </fieldset>
-
-                <fieldset class="form-group">
-                    <input type="checkbox" id="checkbox3">
-                    <label for="checkbox3">Front-End</label>
-                </fieldset>
-
-                <fieldset class="form-group">
-                    <input type="checkbox" id="checkbox4">
-                    <label for="checkbox4">Back-End</label>
-                </fieldset>
-
-                <fieldset class="form-group">
-                    <input type="checkbox" id="checkbox4">
-                    <label for="checkbox5">Design</label>
-                </fieldset>
-
-                <fieldset class="form-group">
-                    <input type="checkbox" id="checkbox4">
-                    <label for="checkbox6">Product Management</label>
-                </fieldset>
-
-                <fieldset class="form-group">
-                    <input type="checkbox" id="checkbox4">
-                    <label for="checkbox7">Product Management</label>
-                </fieldset>
-
-            </form>
-            <br>
-
-            <div class="text-xs-center">
-                <button class="btn btn-deep-orange">Save</button>
-            </div>
-
-            <div class="modal-footer">
-                <div class="options">
-                    <p> <a href="#">Skip for now</a></p>
+            <form action="editprofile" method="post">
+                <div class="md-form">
+                    <i class="fa fa-user prefix"></i>
+                    <!-- <input value="Nancy Yang" type="text" id="form3" class="form-control"> -->
+                    <label for="form">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
                 </div>
-            </div>
 
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix"></i>
+                    <!-- <input value="nancy@berkeley.edu" type="text" id="form2" class="form-control"> -->
+                    <label for="form">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-pencil prefix"></i>
+                    <!-- <textarea type="text" id="form8" class="md-textarea">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi perferendis fuga adipisci, eum consequuntur nobis. Quis fugiat placeat laboriosam possimus beatae officia quasi. Provident, autem, qui! Enim illum officia quod.</textarea> -->
+                    <label for="form">Bio</label>
+                    <textarea type="text" class="form-control" id="bio" name="bio" placeholder="Bio"></textarea> 
+                </div>
+
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix"></i>
+                    <input type="text" id="form2" class="form-control">
+                    <label for="form">My Skills</label>
+                </div>
+
+<!-- https://coderwall.com/p/pkthoa/read-checkbox-in-flask -->
+<!-- http://stackoverflow.com/questions/31859903/get-the-value-of-a-checkbox-in-flask -->
+                    <fieldset class="form-group">
+                        <input type="checkbox" class="filled-in" id="checkbox1">
+                        <label class="" for="checkbox1">UX</label>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <input type="checkbox" id="checkbox2">
+                        <label for="checkbox2">Data Science</label>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <input type="checkbox" id="checkbox3">
+                        <label for="checkbox3">Front-End</label>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <input type="checkbox" id="checkbox4">
+                        <label for="checkbox4">Back-End</label>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <input type="checkbox" id="checkbox4">
+                        <label for="checkbox5">Design</label>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <input type="checkbox" id="checkbox4">
+                        <label for="checkbox6">Product Management</label>
+                    </fieldset>
+
+                    <fieldset class="form-group">
+                        <input type="checkbox" id="checkbox4">
+                        <label for="checkbox7">Product Management</label>
+                    </fieldset>
+
+                <br>
+
+                <div class="text-xs-center">
+                    <input type="submit" value="Save" id="but_login" class="btn btn-deep-orange">
+                </div>
+
+                <div class="modal-footer">
+                    <div class="options">
+                        <p> <a href="ideafeed">Skip for now</a></p>
+                    </div>
+                </div>
+            </form>
 
         </div>
     </div>
