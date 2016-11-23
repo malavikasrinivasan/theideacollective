@@ -4,81 +4,52 @@
 {% endblock %}
 
 {% block navblock %}
-<li><a href="#">About</a></li>
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid full" id="background">
-	<div class="col-md-12" id="vert_pad"></div>
-
-	<div class="row" id="div_login">
-		<div class="col-md-4" id="pad_login">
-			<div class="col-md-12" id="vert_pad_2"></div>
-			<div class="col-md-12" id="vert_pad_2"></div>
-			<h1 id="welcome"> Idea(Idea) </h1>
-
-			<h2>We can make ideas real, together!</h2>
-		</div>
-
-		<div class="col-md-4 col-md-offset-4" id="pad_login">
-			<form role="form" action="login" method="post" name="login">
-				<div class="form-group" id="pad_login">
-					Enter your Email: 
-					<input type="email" class="form-control" id="email" name="email" placeholder="Email">
-				</div>
-                <div class="form-group" id="pad_login">
-					Enter your Password:
-					<input type="password" class="form-control" id="password" name="password" placeholder="Password">
-				</div>
-				<div class="checkbox">
-  					<label><input type="checkbox" class="character-checkbox" onclick="showPassword()">Show password</label>
-				</div>
-				<!-- <div class="checkbox">
-                    <span class="character-checkbox" onclick="showPassword()"></span>
-                    <span class="label">Show password</span>
-                </div> -->
-				<p id="pad_login">
-					<input type="submit" value="Sign Up" id="but_login" class="btn btn-custom btn-lg btn-block">
-				</p>
-				<p>
-					<input type="image" src="../static/gmail_signIn.png" alt="Submit" id="gmail_login">
-				</p>
-			</form>
-		</div>
-	</div>
+<div class="row">
+  <div class="col s12 m12 l12" id="banner-container">
+    <!-- <img src="/static/banner1.png" id="banner-img"> -->
+    <div class="col s3 offset-s8 card" id="login-card">
+      <div class="card-content">
+        <span class="card-title">Sign In!</span>
+        <form>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate">
+              <label for="email">Email</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+           <div class="row">
+            <div class="input-field col s12">
+              <button class="btn waves-effect waves-light" type="submit" name="action" id="sign-in-btn">Sign In</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+<div class="container" id="website-description">
+  <div class="row">
+    <div class="col s8 m8 l8" id="punchline">
+        We can make ideas real, together!
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s8 m8 l8" id="subtext">
+      <p>Create a space of trust where students can post their ideas and enrich them by getting commments, upvotes and matching their projects with other people’s skills.</p>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
 
-{% block about %}
-<div class="row" id ="div_about">
-	<div class="col-md-12" id="pad_about">
-		<h1 id="welcome"> How this works? </h1>
-	</div>
-	<div class="col-md-4" id="txt_about">
-		<h2>Our Objective:</h2>
-		<p>Create a space of trust where students can post their ideas and enrich them by getting commments, upvotes and matching their projects with other people's skills.</p>
-	</div>
-	<div class="col-md-4" id="txt_about">
-		<h2>Idea(Idea) Team:</h2>
-		<div class="row">
-			<img src="../static/avatar.png" id="team_image">Anna
-		</div>
-		<div class="row">
-			Malavika<img src="../static/avatar.png" id="team_image">
-		</div>
-		<div class="row">
-			<img src="../static/avatar.png" id="team_image">Nancy
-		</div>
-		<div class="row">
-			Selenne<img src="../static/avatar.png" id="team_image">
-		</div>
-	</div>
-	<div class="col-md-4" id="txt_about">
-		<h2>You want to receive our newsletter?</h2>
-		<p id="pad_login" class="col-md-10 col-md-offset-1">
-			Enter your Email: 
-			<input type="text" class="form-control" id="email" placeholder="Email">
-		</p>
-	</div>
-</div>
-{% endblock %}

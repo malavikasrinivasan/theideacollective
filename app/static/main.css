@@ -1,92 +1,62 @@
-/*----------------- CSS RESET ------------------*/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+nav {
+  background-color: #f44336;
 }
 
-html {
-    font-family: 'Roboto', sans-serif;
+
+
+#banner-container {
+  padding: 0;
+  background: url("/static/banner1.png") no-repeat;
+  background size: cover;
+  
 }
 
-/*----loging page ---*/
-#background {
-    background: url(idea_login.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    height:100%;
-
+#login-card {
+  margin-top: 100px;
+  margin-right: 10px;
 }
 
-#welcome {
-    font-family: 'Roboto', sans-serif;
-    font-size: 4em;
-    font-weight: light;
-    
+#website-description {
+  margin-top: -200px;
 }
+
+#punchline {
+  color: #f44336;
+  margin-top: -100px;
+}
+
+#subtext {
+  margin-top: -100px;
+}
+
+#sign-in-btn {
+  background: #f44336;
+}
+
+footer.page-footer {
+  background-color: #ffffff;
+  border: 1px solid #979797;
+}
+
 
 body {
-	/*background-color: #BAACBD;*/
-	/*text-align: center;*/
-}
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 
-.navbar-default {
-	background: #36374F;
-	color: #ffffff;
-}
+main {
+    flex: 1 0 auto;
+  }
 
-#site-title {
-	text-align: center;
-	vertical-align: center;
-}
-
-#site-nav {
-  margin-top: 20px;
-	display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#site-logo {
-	height: 100px;
-}
 
 #create-idea-btn {
   background: #00C1AB;
   color: black;
 }
 
-.footer {
-  /*position: absolute;*/
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 50px;
-  background-color: #36374F;
-  color: #ffffff;
-  text-align: center;
-  vertical-align: center;
-}
-
-#banner-container {
+/*#banner-container {
   background: url(idea_login.jpg) no-repeat center;
   background-size: cover;
   overflow: hidden;
@@ -97,7 +67,7 @@ body {
   margin-left: 0px;
   margin-right: 0px;
   margin-top: -20px;
-}
+}*/
 
 #search-container {
   /*padding-top: 10%;*/
