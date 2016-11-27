@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% block title %}
+	Dashboard
+{% endblock %}
+
+{% block navblock %}
+<li><button type="submit" class="btn white red-text" id="create-idea-btn">Have an idea?</button>
+<li><button type="submit" class="btn red white-text" id="explore-btn">Explore</button>
+{% endblock %}
+
+{% block content %}
+<div class="containter" id="dashboard-container">
+    <div class="row">
+        <div class="col s12 m10 offset-m1">
+            <!-- Profile card  -->
+            <div class="card horizontal">
+                <!-- User Image -->
+                <div class="avatar col m2" id="profile-photo">
+                	<!-- insert user profile photo -->
+                    <!-- <img src="{{ url_for('static', filename='nancy.jpg')  }}" alt="" class="responsive-img"> -->
+                </div>
+
+                <!-- User Profile -->
+                <div class="card-stacked">
+                    <div class="card-content m4 offset-m2" id="idea-content">
+                        <!-- insert user name -->
+                        <span>
+                        	<h5> Nancy Yang </h5> 
+	                       	<a class="btn-floating btn-large red" id="edit-profilebtn">
+	                    		<i class="large material-icons">mode_edit</i>
+	                		</a>
+                        </span>
+                        
+
+                		<!-- insert user email -->
+                        <h6>nancy@berkeley.edu</h6>
+                        <br>
+
+                        <!-- insert user bio  -->
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis vero, nostrum, quisquam quidem accusantium libero soluta similique temporibus eius nesciunt, cumque nulla sint eos! Temporibus molestias necessitatibus, iusto quas laudantium incidunt natus dicta error placeat maxime suscipit quis nulla laborum, nobis at reiciendis eos magnam officiis! Similique quam ex accusamus voluptatibus impedit non nesciunt nostrum dicta ut, ipsa iusto reiciendis qui laboriosam nobis minus, aut veniam odit? Facilis veritatis fuga, dolores explicabo sed dolor alias saepe, beatae repellat reiciendis voluptatibus eum quam, tenetur odit. Odit id repellendus inventore non tenetur ea, pariatur reiciendis animi hic totam incidunt ipsa consequuntur temporibus. </p><br>
+
+                        <p id="skills-line"> My skills: </p>
+                        
+                        <!-- insert user skills  -->
+                        <p id="skills-needed"> UX, Front-End</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div>
+            	<h4> My Ideas</h4>
+            </div>
+			
+			<div class="row">
+				<div class="card col m4">
+				    <div class="card-image waves-effect waves-block waves-light">
+				    	<img class="activator" src="{{ url_for('static', filename='idea.jpeg')  }}">
+				    </div>
+				    <div class="card-content">
+				     	<span class="card-title activator grey-text text-darken-4">Idea 1 </span> 
+				     	<a class="btn-floating btn-large red" id="edit-profilebtn">
+                    		<i class="large material-icons">mode_edit</i>
+                		</a>
+				    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium laborum veritatis quod eum illo in, aliquid fugit minus aliquam! Aut sint expedita incidunt tenetur rem vel nostrum excepturi dolor neque.</p>
+				    </div>
+				    <div class="card-action right-align" id="idea-action">
+                        <p  id="idea-tags"> <i class="material-icons" id="tag">loyalty</i> Technology , Education </p>
+
+                    </div>
+				</div>
+
+				<div class="card col m4">
+				    <div class="card-image waves-effect waves-block waves-light">
+				    	<img class="activator" src="{{ url_for('static', filename='idea.jpeg')  }}">
+				    </div>
+				    <div class="card-content">
+				     	<span class="card-title activator grey-text text-darken-4">Idea 1 </span> 
+				     	<a class="btn-floating btn-large red" id="edit-profilebtn">
+                    		<i class="large material-icons">mode_edit</i>
+                		</a>
+				    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium laborum veritatis quod eum illo in, aliquid fugit minus aliquam! Aut sint expedita incidunt tenetur rem vel nostrum excepturi dolor neque.</p>
+				    </div>
+				    <div class="card-action right-align" id="idea-action">
+                        <p  id="idea-tags"> <i class="material-icons" id="tag">loyalty</i> Technology , Education </p>
+
+                    </div>
+				</div>
+
+				<div class="card col m4">
+				    <div class="card-image waves-effect waves-block waves-light">
+				    	<img class="activator" src="{{ url_for('static', filename='idea.jpeg')  }}">
+				    </div>
+				    <div class="card-content">
+				     	<span class="card-title activator grey-text text-darken-4">Idea 1 </span> 
+				     	<a class="btn-floating btn-large red" id="edit-profilebtn">
+                    		<i class="large material-icons">mode_edit</i>
+                		</a>
+				    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium laborum veritatis quod eum illo in, aliquid fugit minus aliquam! Aut sint expedita incidunt tenetur rem vel nostrum excepturi dolor neque.</p>
+				    </div>
+				    <div class="card-action right-align" id="idea-action">
+                        <p  id="idea-tags"> <i class="material-icons" id="tag">loyalty</i> Technology , Education </p>
+
+                    </div>
+				</div>
+
+
+
+
+			</div>
+            
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+		
+		
+		
+				    <!--Card image-->
+				    <!-- <div class="view overlay hm-white-slight"> -->
+				        <!-- <img src="{{ url_for('static', filename='idea.jpeg')  }}" class="img-fluid" alt="Card image cap"> -->
+				      <!--   <a>
+				            <div class="mask"></div>
+				        </a>
+				    </div> -->
+				    <!--/.Card image-->
+
+
+				   
+
+
+
+
+			
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
