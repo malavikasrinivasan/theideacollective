@@ -1,17 +1,14 @@
 {% extends "base.html" %}
 
-{% block title %}
-	createidea
-{% endblock %}
+{% set title = 'Share Idea' %}
 
 {% block navblock %}
-<li><button type="submit" class="btn btn-default" id="create-idea-btn">Have an idea?</button>
-<li><a href="#">Explore</a></li>
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-      <span class="glyphicon glyphicon-user"></span> 
-      <strong>Username</strong>
-  </a>
-  <ul class="dropdown-menu">
+<li><button type="submit" class="waves-effect waves-light btn create-idea-btn">Have an idea?</button>
+<li><a href="#" class="white-text">Explore</a></li>
+<li><a href="#" class="dropdown-button" data-beloworigin="true" href='#' data-activates="dropdown-menu">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>
+  	</a>
+  <ul class="dropdown-content" id="dropdown-menu">
     <li><a href="#">Profile</a></li>
     <li><a href="#">Settings</a></li>
     <li><a href="#">Logout</a></li>
@@ -20,76 +17,90 @@
 {% endblock %}
 
 {% block content %}
-<div  class="container-fluid full">
-	<h1 class="col-md-12 text-center card-title"> Share an Idea </h1>
-	<p>An idea that is developed and put into action is more important than an idea that exists only as an idea.</p>
-	<form action="createtrip" method="post" name="createtrip">
-		{{ form.hidden_tag() }}
-		<div class="row top-buffer">
-			<label id="inputIdeaName" class="col-sm-2 col-form-label text-right">Idea Name</label>
-			<div class="col-sm-8">
-				<p id="inputIdeaName">
-					{{ form.idea_name(size=120, class_="form-control") }} 
-				</p>
-			</div>
-		</div>
-		<div class="row top-buffer">
-			<label id="inputDescription" class="col-sm-2 col-form-label text-right">Description</label>
-			<div class="col-sm-8">
-				<p id="inputDescription">
-					{{ form.description(size=120, class_="form-control") }} 
-				</p>
-			</div>
-		</div>		
-		<div class="row top-buffer">
-			<label id="tagButtons" class="col-sm-2 col-form-label text-right">Tagetories</label>
-			<div class="col-sm-8 text-left">
-				<button class="btn btn-default" type="submit">Technology</button>
-				<button class="btn btn-default" type="submit">Education</button>
-				<button class="btn btn-default" type="submit">Music</button>
-				<button class="btn btn-default" type="submit">Data</button>
-				<button class="btn btn-default" type="submit">Health Care</button>
-			</div>
-		</div>
-		<div class="row top-buffer">
-			<label id="skillsButtons" class="col-sm-2 col-form-label text-right">Required Skills</label>
-			<div class="col-sm-8 text-left">
-				<button class="btn btn-default" type="submit">UX</button>
-				<button class="btn btn-default" type="submit">Front-End</button>
-				<button class="btn btn-default" type="submit">Data Science</button>
-				<button class="btn btn-default" type="submit">Security</button>
-			</div>
-		</div>
-		<div class="row top-buffer">
-			<label id="browseFiles" class="col-sm-2 col-form-label text-right">Supporting Material</label>
-			<div class="col-sm-8 text-left">
-		    	<div class="input-group">
-            		<label id="browsebutton" class="btn btn-default input-group-addon" for="my-file-selector">
-                	Browse...
-           			</label>
-            		<input type="text" class="form-control" readonly>
-        		</div>		
-			</div>
-		</div>
-	    <div class="form-group row col-sm-12 top-buffer">
-	    	<legend class="col-form-legend col-sm-2 text-right">Ownership</legend>
-	    	<div class="col-sm-8 text-left">
-	      		<div class="form-check">
-	          		<label class="form-check-label">
-	            		<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-	            		I am the owner
-	          		</label>
-	        	</div>
-	       		<div class="form-check">
-		        	<label class="form-check-label">
-		            	<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-		            	Idea up for adoption
-	         		</label>
-	        	</div>
-	      	</div>
-	    </div>
-		<p>
-			<input type="submit" value="Share!">
-		</p>
-	</form>
+<div class="row">
+  <div class="col s11 m11 l11 card" id="create-idea-card">
+    <div class="card-content">
+      <div class="row">
+        <span class="card-title">Share your idea!</span>
+      </div>
+      <div class="row">
+        <h6>An idea that is developed and put into action is more important than an idea that exists only as an idea.</h6>
+      </div>
+      <div class="row">
+        <div class="col s10 m10 l10 input-field">
+          <input type="text" name="idea_name">
+           <label for="idea_name">Idea Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s10 m10 l10 input-field">
+          <input type="text" name="idea_desc">
+           <label for="idea_desc">Description</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s1 m1 l1">
+          <p style="color: #9e9e9e">Tagetories</p>
+        </div>
+        <div class="col s11 m11 l11" id="tag-grid">
+         <!-- Make this dynamically render from a source list -->
+          <div class="col s1 m1 l1 tag-item"><a href=# style="color: #f44336">#Art</a></div>
+          <div class="col s1 m1 l1 tag-item"><a href=# style="color: #f44336">#Education</a></div>
+          <div class="col s1 m1 l1 tag-item"><a href=# style="color: #f44336">#Data</a></div>
+          <div class="col s1 m1 l1 tag-item"><a href=# style="color: #f44336">#Science</a></div>
+          <div class="col s1 m1 l1 tag-item"><a href=# style="color: #f44336">#Media</a></div>
+          <div class="col s1 m1 l1 tag-item"><a href=# style="color: #f44336">#Research</a></div>
+          <div class="col s1 m1 l1 tag-item"><a href=# style="color: #f44336">#Politics</a></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s1 m1 l1">
+          <p style="color: #9e9e9e">Looking to collaborate with</p>
+        </div>
+        <div class="col s11 m11 l11" id="tag-grid">
+        <!-- Make this dynamically render from a source list -->
+          <div class="col s2 m2 l2"><button class="waves-effect waves-boo .waves-ripple btn skills-btn">UX Researchers</button></div>
+          <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn skills-btn">Designers</button></div>
+          <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn skills-btn">Data Scientists</button></div>
+          <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn skills-btn">Front End Developers</button></div>
+          <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn skills-btn">Back End Developers</button></div>
+          <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn skills-btn">Back End Developers</button></div>
+          <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn skills-btn">Back End Developers</button></div>
+          <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn skills-btn">Back End Developers</button></div>
+          <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn skills-btn">Back End Developers</button></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s1 m1 l1">
+          <p style="color: #9e9e9e">Supporting material</p>
+        </div>
+        <div class="col s11 m11 l11" id="skills-grid">
+          <div class="col s2 m2 l2"><a class="upload-btn" href="#"><i class="fa fa-link" aria-hidden="true"></i>   Link</a></div>
+          <div class="col s2 m2 l2"><a class="upload-btn" href="#"><i class="fa fa-camera" aria-hidden="true"></i>   Photo</a></div>
+          <div class="col s2 m2 l2"><a class="upload-btn" href="#"><i class="fa fa-video-camera" aria-hidden="true"></i>   Video</a></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s1 m1 l1">
+          <p style="color: #9e9e9e">Ownership</p>
+        </div>
+        <div class="col s11 m11 l11" id="ownership-grid">
+          <div class="col s4 m4 l4"> 
+            <input name="ownership-grp" type="radio" id="proprietary" />
+            <label for="proprietary">I am the idea owner</label>
+          </div>
+          <div class="col s4 m4 l4"> 
+            <input name="ownership-grp" type="radio" id="open" />
+            <label for="open">This idea can be adopted by anyone</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s4 m4 l4">
+          <button type="submit" class="waves-effect waves-light btn share-idea-btn">Share</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
