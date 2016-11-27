@@ -4,13 +4,12 @@
 {% endblock %}
 
 {% block navblock %}
-<li><button type="submit" class="btn btn-default" id="create-idea-btn">Have an idea?</button>
-<li><a href="#">Explore</a></li>
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-      <span class="glyphicon glyphicon-user"></span> 
-      <strong>Username</strong>
-  </a>
-  <ul class="dropdown-menu">
+<li><button type="submit" class="waves-effect waves-light btn create-idea-btn">Have an idea?</button>
+<li><a href="#" class="white-text">Explore</a></li>
+<li><a href="#" class="dropdown-button" data-beloworigin="true" href='#' data-activates="dropdown-menu">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>
+    </a>
+  <ul class="dropdown-content" id="dropdown-menu">
     <li><a href="#">Profile</a></li>
     <li><a href="#">Settings</a></li>
     <li><a href="#">Logout</a></li>
@@ -19,95 +18,88 @@
 {% endblock %}
 
 {% block content %}
-<div class="main-container">
-    <!--Form without header-->
-    <div class="card col-md-6 col-md-offset-3">
-        <div class="card-block">
-            <div class="text-xs-center card-title">
-                <h3>  <span class="glyphicon glyphicon-pencil"></span>Edit Profile</h3>
-                <hr class="mt-2 mb-2">
-            </div>
-            <form action="editprofile" method="post">
-                <div class="md-form">
-                    <i class="fa fa-user prefix"></i>
-                    <!-- <input value="Nancy Yang" type="text" id="form3" class="form-control"> -->
-                    <label for="form">Name</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
-                </div>
-
-                <div class="md-form">
-                    <i class="fa fa-envelope prefix"></i>
-                    <!-- <input value="nancy@berkeley.edu" type="text" id="form2" class="form-control"> -->
-                    <label for="form">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-                </div>
-
-                <div class="md-form">
-                    <i class="fa fa-pencil prefix"></i>
-                    <!-- <textarea type="text" id="form8" class="md-textarea">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi perferendis fuga adipisci, eum consequuntur nobis. Quis fugiat placeat laboriosam possimus beatae officia quasi. Provident, autem, qui! Enim illum officia quod.</textarea> -->
-                    <label for="form">Bio</label>
-                    <textarea type="text" class="form-control" id="bio" name="bio" placeholder="Bio"></textarea> 
-                </div>
-
-                <div class="md-form">
-                    <i class="fa fa-envelope prefix"></i>
-                    <input type="text" id="form2" class="form-control">
-                    <label for="form">My Skills</label>
-                </div>
-
-<!-- https://coderwall.com/p/pkthoa/read-checkbox-in-flask -->
-<!-- http://stackoverflow.com/questions/31859903/get-the-value-of-a-checkbox-in-flask -->
-                    <fieldset class="form-group">
-                        <input type="checkbox" class="filled-in" id="checkbox1">
-                        <label class="" for="checkbox1">UX</label>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <input type="checkbox" id="checkbox2">
-                        <label for="checkbox2">Data Science</label>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <input type="checkbox" id="checkbox3">
-                        <label for="checkbox3">Front-End</label>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <input type="checkbox" id="checkbox4">
-                        <label for="checkbox4">Back-End</label>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <input type="checkbox" id="checkbox4">
-                        <label for="checkbox5">Design</label>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <input type="checkbox" id="checkbox4">
-                        <label for="checkbox6">Product Management</label>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <input type="checkbox" id="checkbox4">
-                        <label for="checkbox7">Product Management</label>
-                    </fieldset>
-
-                <br>
-
-                <div class="text-xs-center">
-                    <input type="submit" value="Save" id="but_login" class="btn btn-deep-orange">
-                </div>
-
-                <div class="modal-footer">
-                    <div class="options">
-                        <p> <a href="ideafeed">Skip for now</a></p>
+<div class="containter" id="editprofile-container">
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card">
+                <div class="card-content black-text">
+                    <!-- Edit Profile Title -->
+                    <div>
+                        <h3 class="card-title center-align"> My Profile</h3>
+                        <!-- <i class="material-icons prefix">mode_edit</i> -->
                     </div>
-                </div>
-            </form>
+              
+              
+                  <div class="row">
+                    <form class="col s12">
+                        <!-- Name -->
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                              <input id="last_name" type="text" class="validate">
+                              <label for="name">Name</label>
+                            </div>
+                        </div>
 
+                        <!-- Email -->    
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                              <input id="email" type="email" class="validate">
+                              <label for="email" data-error="wrong" data-success="right">Email</label>
+                            </div>
+                        </div>
+                        
+                        <!-- Bio -->
+                        <div class="row">
+                            <div class="input-field col s12 m12">
+                                <textarea id="textarea1" class="materialize-textarea" length="400"></textarea>
+                                <label for="textarea1">Bio</label>
+                            </div>
+                        </div>
+
+                        <!-- My skills -->
+                        <div class="row">
+                            <div class="input-field chips chips-initial chips-placeholder col s12 m12">
+                            <!-- <div class="chips chips-initial chips-placeholder"> -->
+                                <p id="my-skills">My Skills</p>
+
+                                <div class="chip"> Front-End
+                                <i class="material-icons close">close</i>   
+                                </div>
+
+                                <div class="chip"> Back-End
+                                <i class="material-icons close">close</i>   
+                                </div>
+
+                                <div class="chip"> Data Science
+                                <i class="material-icons close">close</i>   
+                                </div>
+
+                                <div class="chip"> UX
+                                <i class="material-icons close">close</i>   
+                                </div>
+
+                                <div class="chip"> Design
+                                <i class="material-icons close">close</i>   
+                                </div>
+
+                                <input class="input" placeholder="+Skills">                              
+                            </div>
+                        </div>                 
+                    </form>
+                </div>  
+
+                <!-- Action section : Save or Skip for now  -->
+                <div class="card-action center-align">
+                    <button class="btn waves-effect waves-light" type="submit" name="action" id="sign-in-btn">Save</button>
+                    <div class="s2 m1">
+                        <p class="center-align" id="skip"><a id="skip" href="ideafeed">Skip for now</a></p>                  
+                    </div> 
+                </div> 
+
+                <!-- Comments Section -->
+
+            </div>
         </div>
-    </div>
-    <!--/Form without header-->
- 
+    </div>    
 </div>
 {% endblock %}

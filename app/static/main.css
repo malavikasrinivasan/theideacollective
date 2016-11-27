@@ -153,3 +153,142 @@ main {
 
 .artifact-img {
 }
+
+
+
+
+
+/*----dashboard.html ---*/
+
+#dashboard-container {
+  background-color: #f2f2f2;
+
+}
+
+#edit-profilebtn {
+  float: right;
+}
+
+
+/*#profile-photo {
+  width:100px;
+  height:100px;
+  margin: 30px 0 0 30px;
+  overflow: hidden;
+  border-radius:50%;
+  
+  border: solid 1px black;
+
+}*/
+
+/*#profile-photo img {
+  position: absolute;*/
+ /* top:50%;
+  left:50%;*/
+  
+
+/*}*/
+
+#profile-photo {
+    /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
+    background-image: url('nancy.jpg');
+    
+    /* make a square container */
+    width: 150px;
+    height: 150px;
+
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: center;
+
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 50%;
+}
+
+
+
+/* idepage.html */
+
+#ideapage-container {
+  background-color: #f2f2f2;
+
+}
+
+#idea-content {
+  margin-right: 15px;
+}
+
+#idea-action {
+  margin-right: 15px;
+
+}
+
+#idea-action p{
+  color:;
+
+}
+
+
+.idea-image {
+/*  padding: 1em;*/
+  margin-top: 28px;
+  margin-left: 33px;
+  margin-right: 20px;
+  /*width: 380px;*/
+  /*height: 380px;*/
+
+}
+
+/*.card.horizontal .card-image img {
+  width: 400px;
+  height: 400px;
+  margin-top: 28px;
+
+}*/
+
+#favorite {
+  float: right;
+
+}
+
+#skills-line {
+  color: #9b9b9b;
+  font-weight: 500;
+}
+
+#skills-needed {
+  color: #3683f4;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+#idea-tags {
+  float:left;
+
+}
+
+
+
+
+
+/*Edit Profile */
+
+#skip {
+  color: #039be5;
+  margin-left: 12px;
+  margin-top: 20px;
+}
+
+#editprofile-container {
+  background-color: #f2f2f2;
+
+}
+
+#my-skills {
+  color:#9e9e9e;
+}
+
+
+

@@ -5,13 +5,12 @@
 {% endblock %}
 
 {% block navblock %}
-<li><button type="submit" class="btn btn-default" id="create-idea-btn">Have an idea?</button>
-<li><a href="#">Explore</a></li>
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-      <span class="glyphicon glyphicon-user"></span> 
-      <strong>Username</strong>
-  </a>
-  <ul class="dropdown-menu">
+<li><button type="submit" class="waves-effect waves-light btn create-idea-btn">Have an idea?</button>
+<li><a href="#" class="white-text">Explore</a></li>
+<li><a href="#" class="dropdown-button" data-beloworigin="true" href='#' data-activates="dropdown-menu">
+      <i class="fa fa-user-circle" aria-hidden="true"></i>
+    </a>
+  <ul class="dropdown-content" id="dropdown-menu">
     <li><a href="#">Profile</a></li>
     <li><a href="#">Settings</a></li>
     <li><a href="#">Logout</a></li>
@@ -20,6 +19,130 @@
 {% endblock %}
 
 {% block content %}
+<div class="containter" id="ideapage-container">
+    <div class="row">
+        <div class="col s12 m10 offset-m1">
+            <!-- Idea card  -->
+            <div class="card horizontal">
+                <!-- Idea Image -->
+                <div class="card-image">
+                    <img id ="ideaimage" src="../static/idea.jpeg">
+                </div>
+
+
+                <!-- Idea content -->
+                <div class="card-stacked">
+                    <div class="card-content m4 offset-m2" id="idea-content">
+                        <!-- insert idea name -->
+                        <h4> The best Idea  <i class="material-icons" id="favorite">favorite_border</i></h4> 
+                       
+                        <h6> 5 days ago from Anna</h6> <br>
+                        
+                        <!-- insert idea description  -->
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis vero, nostrum, quisquam quidem accusantium libero soluta similique temporibus eius nesciunt, cumque nulla sint eos! Temporibus molestias necessitatibus, iusto quas laudantium incidunt natus dicta error placeat maxime suscipit quis nulla laborum, nobis at reiciendis eos magnam officiis! Similique quam ex accusamus voluptatibus impedit non nesciunt nostrum dicta ut, ipsa iusto reiciendis qui laboriosam nobis minus, aut veniam odit? Facilis veritatis fuga, dolores explicabo sed dolor alias saepe, beatae repellat reiciendis voluptatibus eum quam, tenetur odit. Odit id repellendus inventore non tenetur ea, pariatur reiciendis animi hic totam incidunt ipsa consequuntur temporibus. </p><br>
+
+                        <p id="skills-line"> Skills I'm looking for: </p>
+                        <!-- insert flask for skills  -->
+                        <p id="skills-needed"> UX, Front-End</p>
+
+                    </div>
+
+                    <!-- Card action -->
+                    <div class="card-action right-align" id="idea-action">
+                        <p  id="idea-tags"> <i class="material-icons" id="tag">loyalty</i> Technology , Education </p>
+                        
+                        <!-- insert flask for tagetories -->
+<!--                         <div id="idea-tags">
+                            <i class="material-icons" >loyalty</i>
+                            <p>   Technology , Education </p>
+                        </div> -->
+
+
+                        
+
+                        <button class="btn waves-effect waves-light right-align" type="submit" name="action" id="sign-in-btn">Get in touch</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Comments section  -->
+            <ul class="collection">
+                <!-- Add new comments -->
+
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">folder</i>
+                    <span class="title">Anna's husband</span><br>
+                    
+                    <div class="input-field col m12">
+                        <input placeholder="Add comments..." id="first_name" type="text" class="validate">
+                    </div>
+
+                    <div class="card-action right-align">
+                        <button class="btn waves-effect waves-light right-align" type="submit" name="action" id="sign-in-btn">Comment</button>
+                    </div>
+                    
+                </li>
+            
+
+                <!-- Previous comments  -->
+                <li class="collection-item avatar">
+                    
+                    <!-- insert commenter's profile photo -->
+                    <img src="../static/nancy.jpg" alt="" class="circle">
+                    
+                    <!-- Insert commenter's username {} -->
+                    <span class="title">Nancy</span>
+                    <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus assumenda vitae rem fugit aliquid non culpa expedita quaerat tenetur ratione, reprehenderit ea perspiciatis, deserunt doloribus illo saepe incidunt ex. Et?
+                    </p>
+                   
+
+                </li>
+
+                <li class="collection-item avatar">
+                    <i class="material-icons circle">folder</i>
+                    <span class="title">Anna's husband</span>
+                    <p>Brave girl, pull yourself together. Trust this good life to give you in time the person who will make everything better. But for now you have to fight these battles, but fighting is not enough. Win them. All your life you’ve been losing, a soul so broken and impaired needs to feel the glory of winning.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus assumenda vitae rem fugit aliquid non culpa expedita quaerat tenetur ratione, reprehenderit ea perspiciatis, deserunt doloribus illo saepe incidunt ex. Et?
+                    </p>
+                    
+                </li>
+                
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!--                 <div class="row">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content black-text">
+                            <div class="input-field col s6">
+                                <input placeholder="Add comments..." id="first_name" type="text" class="validate">
+                            </div>
+                        </div>
+                        <div class="card-action right-align">
+                            <button class="btn waves-effect waves-light right-align" type="submit" name="action" id="sign-in-btn">Comment</button>
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+
+<!-- 
+
+
 <div class="card card-block col-md-10 col-md-offset-1">
     <div class="row top-buffer">
         <img src="{{ url_for('static', filename='freedom.jpg')  }}" class="img-responsive col-md-2">
@@ -57,8 +180,8 @@
     </div>
     <a href="#"><img src="{{ url_for('static', filename='happy.png')  }}" class="img-responsive col-md-1 col-md-offset-10 top-buffer" height="10" width="10"></a>
     <a href="#"><img src="{{ url_for('static', filename='sad.png')  }}" class="img-responsive col-md-1 top-buffer" height="10" width="10"></a>
-</div>
-
+</div> -->
+<!-- 
 <div class="panel panel-default col-md-10 col-md-offset-1 top-buffer">
     <div class="row top-buffer">
         <div class="col-md-12">
@@ -80,5 +203,5 @@
       <textarea class="form-control" rows="5" id="comment"></textarea>
     </div>
   </form>
-</div>
+</div> -->
 {% endblock %}

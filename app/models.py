@@ -22,7 +22,8 @@ def get_idea(idea_id): # For an idea, return their ideas
         # print(sql_query)
         # result = cur.execute(sql_query).fetchall()
         # for i in result:
-        result = cur.execute("select * from idea where id = (?)", (idea_id)).fetchall()
+        # result = cur.execute("select * from idea where id = (?)", (idea_id)).fetchall()
+        result = cur.execute("select * from idea where idea_id = (?)", ([idea_id])).fetchall()
         # print(result)
     # return result[0]
     return result
