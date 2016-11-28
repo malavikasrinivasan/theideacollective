@@ -1,0 +1,229 @@
+
+nav {
+  background-color: #f44336;
+}
+
+
+
+#banner-container {
+  padding: 0;
+  background: url("/static/banner1.png") no-repeat;
+  background size: cover;
+  
+}
+
+#login-card {
+  margin-top: 100px;
+  margin-right: 10px;
+}
+
+#website-description {
+  margin-top: -200px;
+}
+
+#punchline {
+  color: #f44336;
+  margin-top: -100px;
+}
+
+#subtext {
+  margin-top: -100px;
+}
+
+#sign-in-btn {
+  background: #f44336;
+}
+
+footer.page-footer {
+  background-color: #ffffff;
+  border: 1px solid #979797;
+}
+
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+
+
+#create-idea-btn {
+  background: #00C1AB;
+  color: black;
+}
+
+/*#banner-container {
+  background: url(idea_login.jpg) no-repeat center;
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 60%;
+  padding: 0;
+  padding-bottom: 20px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: -20px;
+}*/
+
+#search-container {
+  /*padding-top: 10%;*/
+  margin-top: 15%;
+  display: flex;
+  align-items: center;
+}
+
+#search-bar {
+  width: 100%;
+  border-radius: 5px;
+}
+
+#top-ideas-container {
+  padding: 50px;
+  background: 
+}
+
+
+.thumbnail {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.tagetory-display {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+
+/*----dashboard.html ---*/
+
+#profile-photo {
+  max-width: 100%
+
+}
+
+#profile-info {
+  text-align: left;
+  
+}
+
+#profile-info p {
+  font-size: 18px;
+
+}
+
+#my-idea-title {
+  padding:1em;
+}
+
+#my-idea-title h1 {
+  font-size: 2em;
+}
+
+.testimonial-card .avatar {
+    border-radius: 50%;
+    width: 200px;
+    height: auto;
+    margin: -65px auto 0;
+    border: 5px solid #fff;
+    background: #FFF;
+}
+.testimonial-card .avatar img {
+    width: 100%;
+}
+
+/* createidea.html and idepage.html */
+.card-title  {
+  font-size: 1.5em;
+}
+
+.top-buffer { 
+  margin-top:20px; 
+}
+
+.card-title {
+  font-size: 1.5em;
+}
+
+small {
+  font-size: smaller;
+}
+
+
+/*SEL*/
+/*Login Changes*/
+#div_login, #div_about{
+  color: white;
+}
+
+#welcome {
+    font-family: 'Roboto', sans-serif;
+    font-size: 4em;
+    font-weight: light;
+    padding-bottom: 40px;
+    padding-top: 30px;
+    color: white;
+}
+
+#pad_login{
+    padding-bottom: 5px;
+}
+
+#but_login{
+  color: #36374F;
+}
+
+#vert_pad_2{
+  height:5%;
+}
+
+#vert_pad{
+  height:45%;
+}
+
+#div_about{
+  background-color: #FF666B;
+  height:45%;
+}
+
+#gmail_login{
+  height: 40px;
+}
+
+#team_image{
+    height:10%;
+}
+
+#txt_about{
+    font-size:20px;
+}
+
+
+/*Edit Profile Changes*/
+#background_edit_profile{
+  background: no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height:90%;
+  background: #00C1AB;
+}
+
+#avatar_profile{
+    height:20%;
+}
+
+#div_skills{
+  border:2px solid white;
+  padding: 15px;
+}
+
+#profile_pad{
+  padding: 10px;
+}
+
+/*SEL*/
