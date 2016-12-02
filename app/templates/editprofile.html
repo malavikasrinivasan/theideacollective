@@ -4,15 +4,14 @@
 {% endblock %}
 
 {% block navblock %}
-<li><button type="submit" class="waves-effect waves-light btn create-idea-btn">Have an idea?</button>
-<li><a href="#" class="white-text">Explore</a></li>
+<li><a href={{ url_for('createidea') }} class="waves-effect waves-light btn white red-text create-idea-btn">Have an idea?</a></li>
+<li><a href={{ url_for('ideafeed') }} class="waves-effect waves-light btn white-text red create-idea-btn">Explore</a></li>
 <li><a href="#" class="dropdown-button" data-beloworigin="true" href='#' data-activates="dropdown-menu">
-      <i class="fa fa-user-circle" aria-hidden="true"></i>
+      <i class="material-icons md-36">account_circle</i>
     </a>
   <ul class="dropdown-content" id="dropdown-menu">
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Settings</a></li>
-    <li><a href="#">Logout</a></li>
+    <li><a href={{ url_for('dashboard', user_id=user_id) }}>Dashboard</a></li>
+    <li><a href={{ url_for('logout') }}>Logout</a></li>
   </ul>
 </li>
 {% endblock %}
@@ -26,16 +25,15 @@
                     <!-- Edit Profile Title -->
                     <div>
                         <h3 class="card-title center-align"> My Profile</h3>
-                        <!-- <i class="material-icons prefix">mode_edit</i> -->
                     </div>
               
-              
-                  <div class="row">
-                    <form class="col s12">
+                    <div class="row">
+                    <form class="col s12" action="editprofile" method="post" name="profile_skills">
+
                         <!-- Name -->
                         <div class="row">
                             <div class="input-field col s12 m12">
-                              <input id="last_name" type="text" class="validate">
+                              <input id="name" name="name" type="text" class="validate" value="{{name}}">
                               <label for="name">Name</label>
                             </div>
                         </div>
@@ -43,7 +41,7 @@
                         <!-- Email -->    
                         <div class="row">
                             <div class="input-field col s12 m12">
-                              <input id="email" type="email" class="validate">
+                              <input id="email" name="email" type="email" class="validate" placeholder={{email}} readonly>
                               <label for="email" data-error="wrong" data-success="right">Email</label>
                             </div>
                         </div>
@@ -51,7 +49,7 @@
                         <!-- Bio -->
                         <div class="row">
                             <div class="input-field col s12 m12">
-                                <textarea id="textarea1" class="materialize-textarea" length="400"></textarea>
+                                <textarea id="bio" name="bio" class="materialize-textarea" length="400" >{{bio}}</textarea>
                                 <label for="textarea1">Bio</label>
                             </div>
                         </div>
@@ -62,42 +60,23 @@
                             <!-- <div class="chips chips-initial chips-placeholder"> -->
                                 <p id="my-skills">My Skills</p>
 
-                                <div class="chip"> Front-End
-                                <i class="material-icons close">close</i>   
-                                </div>
-
-                                <div class="chip"> Back-End
-                                <i class="material-icons close">close</i>   
-                                </div>
-
-                                <div class="chip"> Data Science
-                                <i class="material-icons close">close</i>   
-                                </div>
-
-                                <div class="chip"> UX
-                                <i class="material-icons close">close</i>   
-                                </div>
-
-                                <div class="chip"> Design
-                                <i class="material-icons close">close</i>   
-                                </div>
-
-                                <input class="input" placeholder="+Skills">                              
+                                {% for avail_skill in available_skills %}
+                                    <input type="checkbox" value={{ avail_skill['skill_id'] }} name="skills" id={{ avail_skill['skill_id'] }}>
+                                    <label class="" for={{ avail_skill['skill_id'] }}>{{ avail_skill['name'] }}</label>
+                                {% endfor %}
                             </div>
-                        </div>                 
-                    </form>
-                </div>  
+                        </div>
 
-                <!-- Action section : Save or Skip for now  -->
-                <div class="card-action center-align">
-                    <button class="btn waves-effect waves-light" type="submit" name="action" id="sign-in-btn">Save</button>
-                    <div class="s2 m1">
-                        <p class="center-align" id="skip"><a id="skip" href="ideafeed">Skip for now</a></p>                  
+                    <!-- Action section : Save or Skip for now  -->
+                    <div class="card-action center-align">
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="sign-in-btn">Save</button>
+                        <div class="s2 m1">
+                            <p class="center-align" id="skip"><a id="skip" href="ideafeed">Skip for now</a></p>                  
+                        </div> 
                     </div> 
-                </div> 
-
+                </form>
                 <!-- Comments Section -->
-
+                    </div>  
             </div>
         </div>
     </div>    

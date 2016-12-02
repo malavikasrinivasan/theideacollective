@@ -3,72 +3,64 @@
 {% set title = 'Explore' %}
 
 {% block navblock %}
-<li><button type="submit" class="waves-effect waves-light btn create-idea-btn">Have an idea?</button>
-<li><a href="#" class="white-text">Explore</a></li>
+<li><a href={{ url_for('createidea') }} class="waves-effect waves-light btn white red-text create-idea-btn">Have an idea?</a></li>
+<li><a href={{ url_for('ideafeed') }} class="waves-effect waves-light btn white-text red create-idea-btn">Explore</a></li>
 <li><a href="#" class="dropdown-button" data-beloworigin="true" href='#' data-activates="dropdown-menu">
-      <i class="fa fa-user-circle" aria-hidden="true"></i>
-    </a>
+      <i class="material-icons md-36">account_circle</i>
+  	</a>
   <ul class="dropdown-content" id="dropdown-menu">
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Settings</a></li>
-    <li><a href="#">Logout</a></li>
+    <li><a href={{ url_for('dashboard', user_id=user_id) }}>Dashboard</a></li>
+    <li><a href={{ url_for('logout') }}>Logout</a></li>
   </ul>
 </li>
 {% endblock %}
 
 {% block content %}
 <div class="row" id="search-container">
-  <div class="col s8 m8 l8 offset-l2 offset-m2 offset-s2">
-    <input type="text" name="search-idea" id="search-idea" placeholder="Looking for an idea?">
-  </div>
+	<div class="col s8 m8 l8 offset-l2 offset-m2 offset-s2">
+		<input type="text" name="search-idea" id="search-idea" placeholder="Looking for an idea?">
+	</div>
 </div>
 <div class="row">
-  <div class="col s8 m8 l8 offset-l2 offset-m2 offset-s2">
-  <!-- Make this dynamic -->
-    <div class="col s2 m2 l2"><button class="waves-effect waves-boo .waves-ripple btn tagetories-btn">Art</button></div>
-    <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn tagetories-btn">Designers</button></div>
-    <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn tagetories-btn">Data Scientists</button></div>
-    <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn tagetories-btn">Front End Developers</button></div>
-    <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn tagetories-btn">Back End Developers</button></div>
-    <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn tagetories-btn">Back End Developers</button></div>
-    <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn tagetories-btn">Back End Developers</button></div>
-    <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn tagetories-btn">Back End Developers</button></div>
-    <div class="col s2 m2 l2"><button class="waves-effect waves-boo btn tagetories-btn">Back End Developers</button></div>
-  </div>
+	<div class="col s8 m8 l8 offset-l2 offset-m2 offset-s2">
+	<!-- Make this dynamic -->	
+	{% for tag in general_tags %}
+		<div class="col s2 m2 l2"><button class="waves-effect waves-boo .waves-ripple btn tagetories-btn">{{tag['name']}}</button></div>
+	{% endfor %}
+	</div>
 </div>
 <div class="row ideas-container">
 
-{% for n in range(20) %}
-  <div class="col s12 m6 l4 card idea-card">
-    <div class="col s2 l2 m2">
-      <img src="http://d32ogoqmya1dw8.cloudfront.net/images/serc/empty_user_icon_256.v2.png" class="idea-owner">
-    </div>
-    <div class="col s10 l10 m10">
-        Music Recommendations Revolutionized
-        <br>
-        by Malavika
-    </div>
-    <div class="card-content">
-      <div class="artifact-img">
-        <img src="http://placehold.it/100x100">
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi perferendis fuga adipisci, eum consequuntur nobis. Quis fugiat placeat laboriosam possimus beatae officia quasi. Provident, autem, qui! Enim illum officia quod.
-      </div>
-    </div>
-    <div class="card-action">
-      <div class="col s10 l10 m10">
-        <div class="tag-item"><a href=# style="color: #f44336">#Art</a></div>
-        <div class="tag-item"><a href=# style="color: #f44336">#Education</a></div>
-        <div class="tag-item"><a href=# style="color: #f44336">#Data</a></div>
-        <div class="tag-item"><a href=# style="color: #f44336">#Science</a></div>
-        <div class="tag-item"><a href=# style="color: #f44336">#Media</a></div>
-      </div>
-      <div class="col s2 l2 m2">
-       <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
-      </div>
-    </div>
-  </div>
+{% for idea in ideas %}
+	<div class="col s12 m6 l4 card idea-card">
+		<div class="col s2 l2 m2">
+			<img src="http://d32ogoqmya1dw8.cloudfront.net/images/serc/empty_user_icon_256.v2.png" class="idea-owner">
+		</div>
+		<div class="col s10 l10 m10">
+				<a href={{ url_for('ideapage', idea_id=idea['idea_id']) }}>{{ idea['idea_name'] }}</a>
+				
+				<br>
+				by {{ idea['user_name'] }}
+		</div>
+		<div class="card-content">
+			<div class="artifact-img">
+				<img src="http://placehold.it/100x100">
+			</div>
+			<div>
+				{{ idea['description'] }}
+			</div>
+		</div>
+		<div class="card-action">
+			<div class="col s10 l10 m10">
+				{% for tag in tags[idea['idea_id']]%}
+				<div class="tag-item"><a href=# style="color: #f44336"># {{tag}}</a></div>
+				{% endfor %}
+			</div>
+			<div class="col s2 l2 m2">
+			 <i class="fa fa-heart-o fa-2x" aria-hidden="true"></i>
+			</div>
+		</div>
+	</div>
 {% endfor %}
 </div>
 

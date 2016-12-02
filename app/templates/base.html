@@ -37,7 +37,7 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo" id="site-title">the idea collective</a>
+          <a href="{{url_for('ideafeed')}}" class="brand-logo" id="site-title">the idea collective</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             {% block navblock %} {% endblock %}
           </ul>
@@ -55,22 +55,22 @@
 
 
 
-    <script type="text/javascript" src="{{ url_for('static', filename='interactions.js') }}"></script>
+    
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='interactions.js') }}"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
-
     <footer class="page-footer">
-      <div class="container"> 
-        <div class="row">
-          <div class="col s12 grey-text">
-              Made with <i class="fa fa-heart" aria-hidden="true"></i> in Berkeley, CA by Anna, Malavika, Nancy and Selenne!
-          </div>
-        </div>
-      </div>
+     <div class="container"> 
+       <div class="row" id="footer-box">
+         <div class="col s12 m12 " id=footer-text>
+             Made with <i class="fa fa-heart" aria-hidden="true"></i> in Berkeley, CA by Anna, Malavika, Nancy and Selenne!
+         </div>
+       </div>
+     </div>
      
     </footer>
 

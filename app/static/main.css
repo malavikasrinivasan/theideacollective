@@ -3,6 +3,31 @@ nav {
   background-color: #f44336;
 }
 
+ul #dropdown-menu {
+  width: 8em !important;
+  right: 10% !important;
+  left: auto;
+}
+
+.dropdown-content li {
+  text-align: center;
+
+}
+
+nav i.material-icons{
+  font-size: 44px;
+}
+
+#dropdown-btn {
+  margin-right:8px;
+
+}
+
+/*new*/
+#site-title {
+  margin-left: 3em;
+
+}
 
 #banner-container {
   padding: 0;
@@ -35,9 +60,17 @@ nav {
 
 footer.page-footer {
   background-color: #ffffff;
-  border: 1px solid #979797;
+  /*border: 1px solid #979797;*/
+  margin-top: 0;
 }
 
+#footer-box {
+  margin-left: -5em;
+}
+
+#footer-text {
+  color: #9b9b9b;
+}
 
 body {
     display: flex;
@@ -50,13 +83,26 @@ main {
   }
 
 /*createidea css*/
-
 .create-idea-btn {
-  background: #ffffff;
+  background: #00C1AB;
   color: #f44336;
   text-transform: none;
 }
 
+#explore-li {
+  width: 159.2px;
+
+}
+
+.explore-btn {
+  text-transform: none;
+  width: 159.2px;
+  border-radius: 2px;
+  border: solid 1px #ffffff;
+  margin-left: 3em;
+  margin-right: 2em;
+
+}
 .dropdown-content li>a {
   color: #f44336;
 }
@@ -94,7 +140,8 @@ main {
      /* The alpha value allows the text and background color
      of the button to still show through. */
       background-color: #f44336;
-    }
+}
+
 .upload-btn {
   color: black;
 }
@@ -155,42 +202,24 @@ main {
 }
 
 
-
-
-
 /*----dashboard.html ---*/
 
 #dashboard-container {
   background-color: #f2f2f2;
+  margin-bottom: -20px;
 
+}
+
+#profile-card {
+  margin: 2em 0 0 0;
 }
 
 #edit-profilebtn {
   float: right;
+  margin: -3em 2em 0 0;
 }
 
-
-/*#profile-photo {
-  width:100px;
-  height:100px;
-  margin: 30px 0 0 30px;
-  overflow: hidden;
-  border-radius:50%;
-  
-  border: solid 1px black;
-
-}*/
-
-/*#profile-photo img {
-  position: absolute;*/
- /* top:50%;
-  left:50%;*/
-  
-
-/*}*/
-
 #profile-photo {
-    /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
     background-image: url('nancy.jpg');
     
     /* make a square container */
@@ -205,8 +234,13 @@ main {
 
     /* round the edges to a circle with border radius 1/2 container size */
     border-radius: 50%;
+
+    margin: 2em 1em 0 2em;
 }
 
+#edit-idea {
+  float: right;
+}
 
 
 /* idepage.html */
@@ -231,6 +265,7 @@ main {
 }
 
 
+
 .idea-image {
 /*  padding: 1em;*/
   margin-top: 28px;
@@ -240,13 +275,6 @@ main {
   /*height: 380px;*/
 
 }
-
-/*.card.horizontal .card-image img {
-  width: 400px;
-  height: 400px;
-  margin-top: 28px;
-
-}*/
 
 #favorite {
   float: right;
@@ -268,9 +296,6 @@ main {
   float:left;
 
 }
-
-
-
 
 
 /*Edit Profile */

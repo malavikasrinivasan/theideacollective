@@ -21,6 +21,12 @@
 -- select * from idea_tag
 -- select * from tagetories
 
+-- drop table if exists user;
+-- create table user(
+--     user_id integer primary key,
+--     user_name text not null,
+--     user_email text not null
+-- );
 
 drop table if exists user_profile;
 create table user_profile(
@@ -92,60 +98,61 @@ create table tagetories(
     name text not null
 );
 
--- (tag_id,name)
+-- -- (tag_id,name)
 insert into tagetories values(1, 'Technology');
 insert into tagetories values(2, 'Education');
 insert into tagetories values(3, 'Music');
 insert into tagetories values(4, 'Data');
 insert into tagetories values(5, 'Health');
 
--- (skill_id, name)
+-- -- (skill_id, name)
 insert into skills values(1, 'UX');
 insert into skills values(2, 'Data Science');
 insert into skills values(3, 'Front-End');
 insert into skills values(4, 'Back-End');
 insert into skills values(5, 'Design');
 insert into skills values(6, 'Product Management');
+-- insert into skills values(7, 'My skill');
 
 
-    /* DUMMY */
+--     /* DUMMY */
 
--- (id, tag_id, idea_id)
-insert into idea_tag values(1, 1, 1);
-insert into idea_tag values(2, 3, 1);
-insert into idea_tag values(3, 5, 1);
-insert into idea_tag values(4, 3, 2);
-insert into idea_tag values(5, 4, 2);
+-- -- (id, tag_id, idea_id)
+-- insert into idea_tag values(1, 1, 1);
+-- insert into idea_tag values(2, 3, 1);
+-- insert into idea_tag values(3, 5, 1);
+-- insert into idea_tag values(4, 3, 2);
+-- insert into idea_tag values(5, 4, 2);
 
--- (user_id, name, email, pwd_code, bio)
-insert into user_profile values(1, 'Nancy', 'nancy@gmail.com', 'pwdnan123', 'Love desing, nice color combinations and love awww pictures');
+-- -- (user_id, name, email, pwd_code, bio)
+insert into user_profile values(1, 'Nancy', 'nancy@gmail.com', 'pwdnan123', 'Love design, nice color combinations and love awww pictures');
 insert into user_profile values(2, 'Malavika', 'malu@gmail.com', 'pwdmalu123', 'Love dogs and awww pictures');
 insert into user_profile values(3, 'Anna', 'anna@gmail.com', 'pwdanna123', 'I like pet sitting and love awww pictures');
-insert into user_profile values(4, 'Selenne', 'sel@gmail.com', 'pwdsel123', 'I love zombie movies and hate 202');
+insert into user_profile values(4, 'Selenne', 'sel@gmail.com', 'pwdsel123', 'I love zombie movies and hate hate');
 
--- (comment_id, user_id, idea_id, comment, pub_priv, date_time)
-insert into comments values(1, 1, 1, 'Nice idea 1 for idea 1', 'Public', '1117201612121200');
-insert into comments values(2, 2, 1, 'Nice idea 2 for idea 1', 'Public', '1117201612121200');
-insert into comments values(3, 3, 2, 'Nice idea 1 for idea 2', 'Private', '1117201612121200');
-insert into comments values(4, 3, 2, 'Nice idea 2 for idea 2', 'Public', '1117201612121200');
-insert into comments values(5, 3, 2, 'Nice idea 3 for idea 2', 'Private', '1117201612121200');
+-- -- (comment_id, user_id, idea_id, comment, pub_priv, date_time)
+-- insert into comments values(1, 1, 1, 'Nice idea 1 for idea 1', 'Public', '1117201612121200');
+-- insert into comments values(2, 2, 1, 'Nice idea 2 for idea 1', 'Public', '1117201612121200');
+-- insert into comments values(3, 3, 2, 'Nice idea 1 for idea 2', 'Private', '1117201612121200');
+-- insert into comments values(4, 3, 2, 'Nice idea 2 for idea 2', 'Public', '1117201612121200');
+-- insert into comments values(5, 3, 2, 'Nice idea 3 for idea 2', 'Private', '1117201612121200');
 
--- (idea_id, user_id, name, description, ownership)
-insert into idea values(1, 1, 'Idea 1', 'Description for Idea 1', 'Public');
-insert into idea values(2, 2, 'Idea 2', 'Description for Idea 2', 'Private');
+-- -- (idea_id, user_id, name, description, ownership)
+-- insert into idea values(1, 1, 'Idea 1', 'Description for Idea 1', 'Public');
+-- insert into idea values(2, 2, 'Idea 2', 'Description for Idea 2', 'Private');
 
--- (id, idea_id, skill_id)
-insert into idea_skills values(1, 1, 2);
-insert into idea_skills values(2, 1, 4);
-insert into idea_skills values(3, 1, 6);
-insert into idea_skills values(4, 2, 1);
-insert into idea_skills values(5, 2, 3);
-insert into idea_skills values(6, 2, 5);
+-- -- (id, idea_id, skill_id)
+-- insert into idea_skills values(1, 1, 2);
+-- insert into idea_skills values(2, 1, 4);
+-- insert into idea_skills values(3, 1, 6);
+-- insert into idea_skills values(4, 2, 1);
+-- insert into idea_skills values(5, 2, 3);
+-- insert into idea_skills values(6, 2, 5);
 
--- (id, user_id, skill_id)
-insert into user_skills values(1, 1, 1);
-insert into user_skills values(2, 2, 2);
-insert into user_skills values(3, 2, 3);
-insert into user_skills values(4, 3, 4);
-insert into user_skills values(5, 3, 5);
-insert into user_skills values(6, 4, 6);
+-- -- (id, user_id, skill_id)
+-- insert into user_skills values(1, 1, 1);
+-- insert into user_skills values(2, 2, 2);
+-- insert into user_skills values(3, 2, 3);
+-- insert into user_skills values(4, 3, 4);
+-- insert into user_skills values(5, 3, 5);
+-- insert into user_skills values(6, 4, 6);

@@ -4,15 +4,14 @@
 {% endblock %}
 
 {% block navblock %}
-<li><button type="submit" class="waves-effect waves-light btn create-idea-btn">Have an idea?</button>
-<li><a href="#" class="white-text">Explore</a></li>
+<li><a href={{ url_for('createidea') }} class="waves-effect waves-light btn white red-text create-idea-btn">Have an idea?</a></li>
+<li><a href={{ url_for('ideafeed') }} class="waves-effect waves-light btn white-text red create-idea-btn">Explore</a></li>
 <li><a href="#" class="dropdown-button" data-beloworigin="true" href='#' data-activates="dropdown-menu">
-      <i class="fa fa-user-circle" aria-hidden="true"></i>
+      <i class="material-icons md-36">account_circle</i>
   	</a>
   <ul class="dropdown-content" id="dropdown-menu">
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Settings</a></li>
-    <li><a href="#">Logout</a></li>
+    <li><a href={{ url_for('dashboard', user_id=user_id) }}>Dashboard</a></li>
+    <li><a href={{ url_for('logout') }}>Logout</a></li>
   </ul>
 </li>
 {% endblock %}
@@ -31,29 +30,39 @@
 
                 <!-- User Profile -->
                 <div class="card-stacked">
+                {% for person in user %}
                     <div class="card-content m4 offset-m2" id="idea-content">
                         <!-- insert user name -->
                         <span>
-                        	<h5> Nancy Yang </h5> 
-	                       	<a class="btn-floating btn-large red" id="edit-profilebtn">
+                        	<h5>{{ person['name'] }}</h5> 
+	                       	<a  href={{ url_for('editprofile') }} class="btn-floating btn-large red" id="edit-profilebtn">
 	                    		<i class="large material-icons">mode_edit</i>
 	                		</a>
                         </span>
                         
 
                 		<!-- insert user email -->
-                        <h6>nancy@berkeley.edu</h6>
+                        <h6>{{ person['email'] }}</h6>
                         <br>
 
                         <!-- insert user bio  -->
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis vero, nostrum, quisquam quidem accusantium libero soluta similique temporibus eius nesciunt, cumque nulla sint eos! Temporibus molestias necessitatibus, iusto quas laudantium incidunt natus dicta error placeat maxime suscipit quis nulla laborum, nobis at reiciendis eos magnam officiis! Similique quam ex accusamus voluptatibus impedit non nesciunt nostrum dicta ut, ipsa iusto reiciendis qui laboriosam nobis minus, aut veniam odit? Facilis veritatis fuga, dolores explicabo sed dolor alias saepe, beatae repellat reiciendis voluptatibus eum quam, tenetur odit. Odit id repellendus inventore non tenetur ea, pariatur reiciendis animi hic totam incidunt ipsa consequuntur temporibus. </p><br>
+                        <p> {{ person['bio'] }} </p><br>
 
                         <p id="skills-line"> My skills: </p>
                         
                         <!-- insert user skills  -->
-                        <p id="skills-needed"> UX, Front-End</p>
+                        <p id="skills-needed">
+                        {% for skill in skills %}
+                        	{% if loop.last %}
+                                {{ skill['name'] }}
+                            {% else %}
+                                {{ skill['name'] }},
+                            {% endif %}
+                        {% endfor %} 
+                        </p>
 
                     </div>
+                {% endfor %}
                 </div>
             </div>
 
@@ -62,7 +71,34 @@
             </div>
 			
 			<div class="row">
+				{% for idea in ideas %}
 				<div class="card col m4">
+				    <div class="card-image waves-effect waves-block waves-light">
+				    	<img class="activator" src="{{ url_for('static', filename='idea.jpeg')  }}">
+				    </div>
+				    <div class="card-content">
+				     	<span class="card-title activator grey-text text-darken-4"> {{ idea['idea_name'] }} </span> 
+				     	<a href={{ url_for('ideapage', idea_id = 1) }} class="btn-floating btn-large red" id="edit-profilebtn">
+                    		<i class="large material-icons">mode_edit</i>
+                		</a>
+				    	<p>{{ idea['description'] }}</p>
+				    </div>
+				    <div class="card-action right-align" id="idea-action">
+                        <p  id="idea-tags"> <i class="material-icons" id="tag">loyalty</i> 
+                        {% for tag in tags[idea['idea_id']]%}
+                        	{% if loop.last %}
+                        		{{tag}}
+                        	{% else %}
+                                {{tag}},
+                            {% endif %}
+                        {% endfor %}
+                        </p>
+
+                    </div>
+				</div>
+				{% endfor %}
+
+				<!-- <div class="card col m4">
 				    <div class="card-image waves-effect waves-block waves-light">
 				    	<img class="activator" src="{{ url_for('static', filename='idea.jpeg')  }}">
 				    </div>
@@ -93,24 +129,7 @@
 				    <div class="card-action right-align" id="idea-action">
                         <p  id="idea-tags"> <i class="material-icons" id="tag">loyalty</i> Technology , Education </p>
 
-                    </div>
-				</div>
-
-				<div class="card col m4">
-				    <div class="card-image waves-effect waves-block waves-light">
-				    	<img class="activator" src="{{ url_for('static', filename='idea.jpeg')  }}">
-				    </div>
-				    <div class="card-content">
-				     	<span class="card-title activator grey-text text-darken-4">Idea 1 </span> 
-				     	<a class="btn-floating btn-large red" id="edit-profilebtn">
-                    		<i class="large material-icons">mode_edit</i>
-                		</a>
-				    	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium laborum veritatis quod eum illo in, aliquid fugit minus aliquam! Aut sint expedita incidunt tenetur rem vel nostrum excepturi dolor neque.</p>
-				    </div>
-				    <div class="card-action right-align" id="idea-action">
-                        <p  id="idea-tags"> <i class="material-icons" id="tag">loyalty</i> Technology , Education </p>
-
-                    </div>
+                    </div> -->
 				</div>
 
 
@@ -127,25 +146,6 @@
         </div>
     </div>
 </div>
-
-
-		
-		
-		
-				    <!--Card image-->
-				    <!-- <div class="view overlay hm-white-slight"> -->
-				        <!-- <img src="{{ url_for('static', filename='idea.jpeg')  }}" class="img-fluid" alt="Card image cap"> -->
-				      <!--   <a>
-				            <div class="mask"></div>
-				        </a>
-				    </div> -->
-				    <!--/.Card image-->
-
-
-				   
-
-
-
 
 			
 				</div>
